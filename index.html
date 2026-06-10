@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável - Cyber-Sustentabilidade</title>
+    <!-- Tailwind CSS para estruturação rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Fontes futuristas e de alta legibilidade -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+   
+    <style>
+        :root {
+            --bg-color: #060a07;
+            --cyber-green: #00ff66;
+            --cyber-blue: #00f0ff;
+            --cyber-pink: #ff007f;
+            --dark-surface: #0c140e;
+            --neon-glow-green: 0 0 10px rgba(0, 255, 102, 0.4), 0 0 25px rgba(0, 255, 102, 0.2);
+            --neon-glow-blue: 0 0 10px rgba(0, 240, 255, 0.4), 0 0 25px rgba(0, 240, 255, 0.2);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: #e2e8f0;
+            font-family: 'Rajdhani', sans-serif;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 102, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.05) 0%, transparent 40%),
+                linear-gradient(rgba(18, 24, 19, 0.8) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(18, 24, 19, 0.8) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+        }
+
+        .font-cyber {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        /* Efeitos de brilho Neon */
+        .neon-border-green {
+            border: 1px solid var(--cyber-green);
+            box-shadow: var(--neon-glow-green);
+        }
+
+        .neon-border-blue {
+            border: 1px solid var(--cyber-blue);
+            box-shadow: var(--neon-glow-blue);
+        }
+
+        .neon-text-green {
+            color: var(--cyber-green);
+            text-shadow: 0 0 8px rgba(0, 255, 102, 0.6);
+        }
+
+        .neon-text-blue {
+            color: var(--cyber-blue);
+            text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+        }
+
+        .neon-text-pink {
+            color: var(--cyber-pink);
+            text-shadow: 0 0 8px rgba(255, 0, 127, 0.6);
+        }
+
+        /* Linha de Varredura Cyberpunk */
+        .scanline::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 999;
+            background-size: 100% 4px, 6px 100%;
+            pointer-events: none;
+        }
+
+        /* Animação de glitch sutil */
+        @keyframes glitch {
+            0% { text-shadow: 1px 1px 0px rgba(0,255,102,0.5), -1px -1px 0px rgba(255,0,127,0.5); }
+            50% { text-shadow: -1px 1px 0px rgba(0,255,102,0.5), 1px -1px 0px rgba(255,0,127,0.5); }
+            100% { text-shadow: 1px -1px 0px rgba(0,255,102,0.5), -1px 1px 0px rgba(255,0,127,0.5); }
+        }
+
+        .cyber-glitch {
+            animation: glitch 3s infinite steps(2);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--cyber-green);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--cyber-blue);
+        }
+
+        /* Clip Path para cantos cortados estilo sci-fi */
+        .clip-corner {
+            clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+        }
+
+        .clip-corner-header {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+        }
+    </style>
+</head>
+<body class="scanline min-h-screen flex flex-col justify-between">
+
+    <!-- CABEÇALHO / HEADER -->
+    <header class="border-b border-green-900/40 bg-black/40 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <span class="w-3 h-3 bg-emerald-500 rounded-full animate-ping"></span>
+                <span class="text-xs font-mono tracking-wider text-emerald-400">STATUS: SISTEMA DE EQUILÍBRIO ATIVO</span>
+                <h1 class="text-2xl font-cyber font-black tracking-wider text-white ml-2">
+                    AGRO<span class="neon-text-green">BIO</span><span class="text-cyan-400">TECH</span>
+                </h1>
+            </div>
+           
+            <nav class="flex space-x-6 text-sm font-semibold tracking-widest text-slate-400">
+                <a href="#solucao" class="hover:neon-text-green transition duration-300">SOLUÇÕES</a>
+                <a href="#dados" class="hover:neon-text-blue transition duration-300">MÉTRICAS DO CAMPO</a>
+                <a href="#preservar" class="hover:neon-text-pink transition duration-300">MONITORAMENTO</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SEÇÃO HERO -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-8">
+        <section class="mb-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+           
+            <!-- Bloco de Texto Principal -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-block px-3 py-1 bg-emerald-950/40 border border-emerald-500/30 rounded text-xs font-mono neon-text-green tracking-widest">
+                    TEMA AGRINHO 2026 // TECNOLOGIA E NATUREZA
+                </div>
+               
+                <h2 class="text-4xl md:text-6xl font-cyber font-black tracking-tight leading-none text-white">
+                    AGRO FORTE,<br>
+                    <span class="neon-text-green cyber-glitch">FUTURO SUSTENTÁVEL</span>
+                </h2>
+               
+                <p class="text-lg md:text-xl text-slate-300 font-medium">
+                    O maior desafio do nosso século é alimentar o planeta sem esgotar seus recursos. Descubra como a tecnologia e a ciência de dados da <span class="text-emerald-400">EMBRAPA</span> unidas às diretrizes do <span class="text-cyan-400">IBAMA</span> estão revolucionando a produção brasileira, criando o equilíbrio perfeito entre produtividade e conservação.
+                </p>
+
+                <!-- Painel de Destaque Rápido -->
+                <div class="bg-emerald-950/20 border border-emerald-500/30 p-4 rounded-lg clip-corner flex items-center space-x-4">
+                    <div class="p-3 bg-emerald-500/10 rounded-full text-emerald-400">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-cyber text-sm font-bold text-white tracking-wider">META ZERO DESMATAMENTO EM EXPANSÃO</h4>
+                        <p class="text-xs text-slate-400">O aumento da produtividade ocorre na recuperação de pastagens degradadas, sem avançar sobre florestas nativas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Visual de Conceito Cyberpunk -->
+            <div class="lg:col-span-5 bg-black/60 border-2 border-emerald-500/40 p-6 rounded-lg neon-border-green clip-corner relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+                <div class="flex justify-between items-center mb-6 border-b border-emerald-500/20 pb-3">
+                    <span class="font-mono text-xs text-emerald-400 tracking-widest">// MONITOR_CENTRAL.EXE</span>
+                    <span class="w-2 h-2 bg-emerald-400 rounded-full animate-ping"></span>
+                </div>
+
+                <!-- Dados Gráficos em Linhas de Terminal -->
+                <div class="space-y-4 font-mono text-xs">
+                    <div>
+                        <div class="flex justify-between text-slate-400 mb-1">
+                            <span>REGENERAÇÃO DE BIOMAS</span>
+                            <span class="text-emerald-400">84% CONCLUÍDO</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-2 rounded border border-emerald-950">
+                            <div class="bg-gradient-to-r from-emerald-500 to-cyan-400 h-full rounded" style="width: 84%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-slate-400 mb-1">
+                            <span>REDUÇÃO DE CARBONO EMITIDO (ILPF)</span>
+                            <span class="text-cyan-400">37.9 MILHÕES TONELADAS/ANO</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-2 rounded border border-cyan-950">
+                            <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-full rounded" style="width: 72%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-slate-400 mb-1">
+                            <span>PRODUTIVIDADE DE PRECISÃO (Drones/Sensores)</span>
+                            <span class="neon-text-pink">+20% DE EFICIÊNCIA</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-2 rounded border border-pink-950">
+                            <div class="bg-gradient-to-r from-pink-500 to-rose-400 h-full rounded" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Painel Interno de Logs Simulado -->
+                <div class="mt-6 p-3 bg-black/80 rounded border border-emerald-950 font-mono text-[11px] text-emerald-500/80 leading-relaxed">
+                    <p class="text-emerald-300 font-bold">&gt; EXEC_MONIT_EMBRAPA_ABC_MAIS</p>
+                    <p>&gt;&gt; Recuperação de solo ativo via biofertilizantes: OK</p>
+                    <p>&gt;&gt; Integração Lavoura-Pecuária-Floresta (ILPF) reduz pegada de metano: 100% funcional</p>
+                    <p class="text-cyan-400">&gt;&gt; Diretrizes de Conservação do IBAMA mapeadas via satélite</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: O EQUILÍBRIO ATIVO (PILARESTECH) -->
+        <section id="solucao" class="mb-16 scroll-mt-20">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h3 class="text-3xl font-cyber font-bold tracking-wider text-white">
+                    TECNOLOGIAS PARA O <span class="neon-text-green">EQUILÍBRIO ATIVO</span>
+                </h3>
+                <p class="text-slate-400 mt-2">
+                    A ciência agrícola moderna prova que alta produtividade caminha lado a lado com a regeneração dos biomas nativos.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: ILPF -->
+                <div class="bg-black/40 border border-emerald-500/20 p-6 rounded-lg clip-corner hover:border-emerald-500/60 transition duration-300 relative group">
+                    <div class="absolute top-0 right-0 w-8 h-8 bg-emerald-500/10 border-b border-l border-emerald-500/20 group-hover:border-emerald-500/60 transition duration-300 flex items-center justify-center font-mono text-xs text-emerald-400">
+                        01
+                    </div>
+                    <div class="mb-4 text-emerald-400">
+                        <!-- Ícone de Plantação e Árvores -->
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-cyber font-bold text-white mb-2">SISTEMAS ILPF</h4>
+                    <p class="text-sm text-slate-300">
+                        A <span class="text-emerald-400">Integração Lavoura-Pecuária-Floresta</span> otimiza a mesma área para cultivar grãos, criar gado e produzir madeira. Isso cria um microclima de conforto animal e sequestra o carbono residual das atividades.
+                    </p>
+                </div>
+
+                <!-- Card 2: Bioinsumos -->
+                <div class="bg-black/40 border border-cyan-500/20 p-6 rounded-lg clip-corner hover:border-cyan-500/60 transition duration-300 relative group">
+                    <div class="absolute top-0 right-0 w-8 h-8 bg-cyan-500/10 border-b border-l border-cyan-500/20 group-hover:border-cyan-500/60 transition duration-300 flex items-center justify-center font-mono text-xs text-cyan-400">
+                        02
+                    </div>
+                    <div class="mb-4 text-cyan-400">
+                        <!-- Ícone de Frasco Científico -->
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-cyber font-bold text-white mb-2">BIOINSUMOS ATIVOS</h4>
+                    <p class="text-sm text-slate-300">
+                        Substituição de químicos pesados por inimigos naturais de pragas agrícolas e bactérias fixadoras de nutrientes no solo. A biotecnologia da <span class="text-cyan-400">Embrapa</span> minimiza a poluição hídrica e os danos à fauna nativa.
+                    </p>
+                </div>
+
+                <!-- Card 3: Agricultura de Precisão -->
+                <div class="bg-black/40 border border-pink-500/20 p-6 rounded-lg clip-corner hover:border-pink-500/60 transition duration-300 relative group">
+                    <div class="absolute top-0 right-0 w-8 h-8 bg-pink-500/10 border-b border-l border-pink-500/20 group-hover:border-pink-500/60 transition duration-300 flex items-center justify-center font-mono text-xs text-pink-400">
+                        03
+                    </div>
+                    <div class="mb-4 text-pink-400">
+                        <!-- Ícone de Chip/Sensor -->
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 5h10a2 2 0 012 2v10a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-cyber font-bold text-white mb-2">ALGORITMOS & DRONES</h4>
+                    <p class="text-sm text-slate-300">
+                        Sensores IoT e satélites identificam deficiências exatas no solo. A água e o controle orgânico de pragas são aplicados estritamente onde é necessário, evitando desperdícios e super-dosagens no meio ambiente.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: MÉTRICAS CONCRETAS (EMBRAPA/IBAMA) -->
+        <section id="dados" class="mb-16 scroll-mt-20">
+            <div class="bg-black/80 border border-cyan-500/30 p-8 rounded-lg neon-border-blue relative overflow-hidden clip-corner">
+               
+                <div class="absolute top-0 right-0 p-4 font-mono text-xs text-cyan-400">
+                    SISTEMA DE AUDITORIA // REGISTROS FEDERAIS
+                </div>
+
+                <h3 class="text-2xl md:text-3xl font-cyber font-bold text-white mb-8 flex items-center">
+                    <span class="w-4 h-4 bg-cyan-400 inline-block mr-3 shadow-[0_0_10px_#00f0ff]"></span>
+                    DADOS CONFIRMADOS DE DESEMPENHO E SUSTENTABILIDADE
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Dado 1 -->
+                    <div class="p-4 border-l-4 border-emerald-500 bg-emerald-950/10">
+                        <span class="block font-mono text-xs text-slate-400">AUMENTO DE PRODUTIVIDADE // FONTE EMBRAPA</span>
+                        <span class="block font-cyber text-4xl font-extrabold neon-text-green my-1">+20%</span>
+                        <p class="text-xs text-slate-300">
+                            Produtores que utilizam agricultura de precisão e manejo integrado recuperam o vigor do solo sem precisar desmatar novas áreas de floresta nativa.
+                        </p>
+                    </div>
+
+                    <!-- Dado 2 -->
+                    <div class="p-4 border-l-4 border-cyan-500 bg-cyan-950/10">
+                        <span class="block font-mono text-xs text-slate-400">DESCARBONIZAÇÃO ATIVA // PLANO ABC+</span>
+                        <span class="block font-cyber text-4xl font-extrabold neon-text-blue my-1">-37.9M</span>
+                        <p class="text-xs text-slate-300">
+                            Milhões de toneladas métricas de gases equivalentes de CO2 mitigadas anualmente pela adoção sistemática de agricultura conservacionista no Brasil.
+                        </p>
+                    </div>
+
+                    <!-- Dado 3 -->
+                    <div class="p-4 border-l-4 border-pink-500 bg-pink-950/10">
+                        <span class="block font-mono text-xs text-slate-400">ÁREAS DE PROTEÇÃO LEGAL // IBAMA</span>
+                        <span class="block font-cyber text-4xl font-extrabold neon-text-pink my-1">100%</span>
+                        <p class="text-xs text-slate-300">
+                            Rastreamento digital rígido para certificar que os alimentos sejam oriundos de fazendas que respeitam as Reservas Legais (RL) e de Preservação Permanente (APP).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: CUIDADO AO MEIO AMBIENTE -->
+        <section id="preservar" class="mb-16 scroll-mt-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+               
+                <!-- Ilustração do Painel Cyber de Controle Ambiental -->
+                <div class="space-y-4">
+                    <div class="border border-green-500/20 p-6 bg-black/40 rounded-lg clip-corner">
+                        <h4 class="font-cyber font-bold text-emerald-400 mb-3 flex items-center text-lg">
+                            <span class="w-2.5 h-2.5 bg-emerald-500 rounded-full mr-2"></span>
+                            DIRETRIZES DO IBAMA PARA O AGRO DO FUTURO
+                        </h4>
+                       
+                        <ul class="space-y-4 text-sm font-medium text-slate-300">
+                            <li class="flex items-start">
+                                <span class="text-emerald-400 mr-2">█</span>
+                                <div>
+                                    <strong class="text-white">Cadastro Ambiental Rural (CAR):</strong>
+                                    Declaração obrigatória para identificar, via satélite, a cobertura verde exata e o zoneamento ecológico das propriedades.
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-400 mr-2">█</span>
+                                <div>
+                                    <strong class="text-white">Combate Rigoroso ao Fogo Ilegal:</strong>
+                                    Uso de sensoriamento de calor térmico para detectar e conter queimadas não controladas, garantindo que o agro forte use métodos limpos.
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-400 mr-2">█</span>
+                                <div>
+                                    <strong class="text-white">Cinturões de Biodiversidade:</strong>
+                                    Preservar corredores florestais integrados permite o tráfego de polinizadores naturais, aumentando os índices de germinação natural.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Painel de Conscientização da População -->
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-cyber font-bold text-white tracking-wide">
+                        COMO VOCÊ, CIDADÃO, SE CONECTA A ESTA <span class="neon-text-pink">EVOLUÇÃO VERDE?</span>
+                    </h3>
+                    <p class="text-slate-300">
+                        O futuro sustentável não depende apenas de quem está manuseando a terra. Como consumidores ativos na era cibernética, temos papel fundamental nessa engrenagem ecológica.
+                    </p>
+
+                    <!-- Lista de Ações Práticas do Consumidor -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-emerald-950/20 border border-emerald-500/20 rounded">
+                            <span class="font-mono text-emerald-400 block mb-1">Rastreabilidade</span>
+                            <p class="text-xs text-slate-400">Prefira alimentos com QR Codes de origem certificada. Isso prova que o produto não veio de áreas de desmate.</p>
+                        </div>
+
+                        <div class="p-4 bg-cyan-950/20 border border-cyan-500/20 rounded">
+                            <span class="font-mono text-cyan-400 block mb-1">Evite Desperdício</span>
+                            <p class="text-xs text-slate-400">30% de toda a produção global é desperdiçada. Consumir de forma consciente reduz a pressão sobre os recursos hídricos.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO: CONSELHO HOLOGRÁFICO DE APRENDIZADO -->
+        <section class="mb-16 border-t-2 border-emerald-500/40 pt-16">
+            <div class="bg-gradient-to-br from-emerald-950/20 to-black/80 border border-emerald-500/30 p-8 rounded-lg clip-corner relative">
+                <div class="text-center max-w-2xl mx-auto space-y-6">
+                    <span class="font-mono text-xs tracking-widest text-emerald-400">// COMUNICADO HOLOGRÁFICO DE FORMAÇÃO</span>
+                    <h3 class="text-2xl md:text-4xl font-cyber font-black tracking-tight text-white uppercase">
+                        Sua Voz no Futuro da Terra
+                    </h3>
+                    <p class="text-slate-300">
+                        O equilíbrio entre produzir comida de qualidade e salvaguardar a saúde ecológica dos biomas brasileiros é um pacto tecnológico e de amor à terra. Compartilhe esse conhecimento, pratique ações de consumo consciente e seja um embaixador do agro verde em sua escola e comunidade!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ / FOOTER -->
+    <footer class="bg-black/80 border-t border-emerald-950 py-8 text-center text-xs font-mono tracking-widest text-emerald-600/80">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                © 2026 // PROJETO AGRINHO - SUSTENTABILIDADE BIOCIBERNÉTICA
+            </div>
+            <div class="flex space-x-6">
+                <span class="hover:text-emerald-400 transition cursor-pointer">DADOS: EMBRAPA & IBAMA</span>
+                <span class="text-slate-700">|</span>
+                <span class="hover:text-cyan-400 transition cursor-pointer">SISTEMA ATIVO</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
